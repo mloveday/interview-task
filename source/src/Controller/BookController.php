@@ -40,8 +40,8 @@ class BookController extends AbstractController {
         }
     }
 
-    /** @Route("/books/{id}", name="books_get_one", methods={"GET"}) */
-    public function getOne($id) {
+    /** @Route("/books/{id}", name="books_get_one", methods={"GET"}, requirements={"id"="\d+"}) */
+    public function getOne(int $id) {
         try {
             $book = $this->bookRepository->findOneBy(["id" => $id]);
             if (is_null($book)) {
