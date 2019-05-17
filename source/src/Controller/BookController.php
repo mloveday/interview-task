@@ -100,9 +100,23 @@ class BookController extends AbstractController {
         return $this->responseService->getResponse($book);
     }
 
-    /** @Route("/books", name="books_delete", methods={"DELETE"}) */
-    public function delete() {
-        return $this->responseService->getErrorResponse(["Endpoint not implemented"], Response::HTTP_NOT_FOUND);
+    /** @Route("/books/{id}", name="books_delete", methods={"DELETE"}, requirements={"id"="\d+"}) */
+    public function delete(int $id) {
+        try {
+            $book = $this->bookRepository->findOneBy(["id" => $id]);
+            if (is_null($book)) {
+                return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
+            }
+            // TODO delete book
+            try {
+                $this->persistenceService->delete($book);
+            } catch (Exception $e) {
+                return $this->responseService->getErrorResponse(["Could not delete book with id $id"], Response::HTTP_INTERNAL_SERVER_ERROR);
+            }
+            return $this->responseService->getResponse(null);
+        } catch (Exception $e) {
+            return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     private function checkFields($object, array $fields) {
