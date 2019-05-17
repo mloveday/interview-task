@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+hostname=$1
+root=$2
+php=$3
+ubuntu=$(lsb_release -r | awk '{print $2}')
+ubuntu_major=$(echo "$ubuntu" | awk -F. '{print $1}')
+
+if [[ -f "/etc/apache2/sites-enabled/$hostname.conf" ]]
+then
+    echo "[$hostname] already created"
+    exit 0
+fi
+
+if [[ "$ubuntu_major" > '14' && "$php" < '5.6' ]]
+then
+    echo "PHP $php not supported on Ubuntu $ubuntu"
+    exit 1
+fi
+
+[[ "$php" < '7.1' ]] && php_ext='.ph(p[3457]?|t|tml)' || php_ext='.ph(ar|p|tml)'
+[[ "$php" = '5' ]] && fpm_path='/run' || fpm_path='/run/php'
+
+block="<VirtualHost *:80>
+    ServerName $hostname
+    DocumentRoot $root
+
+    <Directory $root>
+        Options -Indexes +FollowSymLinks +MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    <FilesMatch \".+\\$php_ext$\">
+        SetHandler \"proxy:unix:$fpm_path/php$php-fpm.sock|fcgi://localhost\"
+    </FilesMatch>
+
+    ErrorLog \${APACHE_LOG_DIR}/$hostname-error.log
+    LogLevel error
+    # CustomLog \${APACHE_LOG_DIR}/$hostname-access.log combined
+</VirtualHost>
+
+<VirtualHost *:443>
+    SSLEngine On
+    SSLCertificateFile /etc/ssl/$hostname.crt
+    SSLCertificateKeyFile /etc/ssl/$hostname.key
+    ServerName $hostname
+    DocumentRoot $root
+
+    <Directory $root>
+        Options -Indexes +FollowSymLinks +MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    <FilesMatch \".+\\$php_ext$\">
+        SetHandler \"proxy:unix:$fpm_path/php$php-fpm.sock|fcgi://localhost\"
+    </FilesMatch>
+
+    ErrorLog \${APACHE_LOG_DIR}/$hostname-error.log
+    LogLevel error
+    # CustomLog \${APACHE_LOG_DIR}/$hostname-access.log combined
+</VirtualHost>"
+
+echo "$block" > "/etc/apache2/sites-available/$hostname.conf"
+
+a2ensite "$hostname.conf" > /dev/null 2>&1
+
+a2enconf "php$php-fpm" && service apache2 restart

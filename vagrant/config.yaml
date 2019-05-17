@@ -1,0 +1,16 @@
+hostname: interviewtask
+databases:
+- name: interview_task
+  user: dev
+  password: secret
+folders:
+  - map: ../
+    to: /vagrant/code
+sites:
+- url: localhost
+  root: /vagrant/code/public_html
+apt-packages:
+  - php7.2-xml
+ports:
+  - guest: 3306
+    host: 33060

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export DEBIAN_FRONTEND=noninteractive
+
+# Install Java JRE
+if type java > /dev/null 2>&1
+then
+    echo 'Java already installed'
+else
+    apt-get -y install "openjdk-${1:-8}-jre-headless" > /dev/null 2>&1
+fi

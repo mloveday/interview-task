@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+export DEBIAN_FRONTEND=noninteractive
+
+# Check if package is already installed
+if (dpkg --list | awk '{print $2}' | grep -Fcq "$1")
+then
+    echo "$1 already installed"
+    exit 0
+fi
+
+# Check if package exists
+apt-get update > /dev/null 2>&1
+apt-cache show "$1" > /dev/null 2>&1
+
+if [[ $? != 0 ]]
+then
+    echo "Unable to locate the $1 package in APT"
+else
+    apt-get -y install "$1" > /dev/null 2>&1
+fi

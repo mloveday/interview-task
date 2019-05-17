@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+hostname=$1
+root=$2
+php=$3
+ubuntu=$(lsb_release -r | awk '{print $2}')
+ubuntu_major=$(echo "$ubuntu" | awk -F. '{print $1}')
+
+if [[ -f "/etc/nginx/sites-enabled/$hostname" ]]
+then
+    echo "[$hostname] already created"
+    exit 0
+fi
+
+if [[ "$ubuntu_major" > '14' && "$php" < '5.6' ]]
+then
+    echo "PHP $php not supported on Ubuntu $ubuntu"
+    exit 1
+fi
+
+[[ "$php" = '5' ]] && fpm_path='/run' || fpm_path='/run/php'
+
+block="server {
+    listen 80;
+    listen 443 ssl;
+    server_name $hostname;
+    root $root;
+
+    ssl_certificate /etc/ssl/$hostname.crt;
+    ssl_certificate_key /etc/ssl/$hostname.key;
+
+    charset utf-8;
+    index index.html index.htm index.php;
+
+    access_log off;
+    error_log  /var/log/nginx/$hostname-error.log error;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    location / {
+        try_files \$uri \$uri/ /index.php\$is_args\$args;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:$fpm_path/php$php-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}"
+
+echo "$block" > "/etc/nginx/sites-available/$hostname"
+
+ln -fs "/etc/nginx/sites-available/$hostname" "/etc/nginx/sites-enabled/$hostname"
