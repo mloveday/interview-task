@@ -77,12 +77,41 @@ class BookController extends AbstractController {
     }
 
     /** @Route("/books", name="books_put", methods={"PUT"}) */
-    public function put() {
-        return $this->responseService->getErrorResponse(["Endpoint not implemented"], Response::HTTP_NOT_FOUND);
+    public function put(Request $request) {
+        $errorMessages = [];
+        $decodedBody = json_decode($request->getContent());
+        if (isset($decodedBody->id)) {
+            $errorMessages[] = 'id must not be supplied when creating a new book';
+        }
+        $errorMessages = array_merge($errorMessages, $this->checkFields($decodedBody, ['author', 'title']));
+        if (count($errorMessages) > 0) {
+            return $this->responseService->getErrorResponse($errorMessages, Response::HTTP_BAD_REQUEST);
+        }
+
+        /** @var Book $book */
+        $book = $this->requestService->getDeserializedRequest($request->getContent(), Book::class);
+
+        try {
+            $this->persistenceService->persist($book);
+        } catch (Exception $e) {
+            return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        return $this->responseService->getResponse($book);
     }
 
     /** @Route("/books", name="books_delete", methods={"DELETE"}) */
     public function delete() {
         return $this->responseService->getErrorResponse(["Endpoint not implemented"], Response::HTTP_NOT_FOUND);
+    }
+
+    private function checkFields($object, array $fields) {
+        $errors = [];
+        foreach ($fields as $field) {
+            if (!isset($object->{$field}) || is_null($object->{$field})) {
+                $errorMessages[] = "$field must be supplied and not null";
+            }
+        }
+        return $errors;
     }
 }
