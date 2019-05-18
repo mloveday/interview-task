@@ -14,13 +14,15 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class BookRepository extends ServiceEntityRepository
 {
+    const COL__ID = 'id';
+
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Book::class);
     }
 
     public function getOneById(int $id) {
-        return $this->findOneBy(['id' => $id]);
+        return $this->findOneBy([self::COL__ID => $id]);
     }
 
     // /**
