@@ -43,12 +43,14 @@ class BookController extends AbstractController {
     /** @Route("/books/{id}", name="books_get_one", methods={"GET"}, requirements={"id"="\d+"}) */
     public function getOne(int $id) {
         try {
+            // TODO create method to get by id
             $book = $this->bookRepository->findOneBy(["id" => $id]);
             if (is_null($book)) {
                 return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
             }
             return $this->responseService->getResponse($book);
         } catch (Exception $e) {
+            // TODO replace with generic message, handled by event subscriber
             return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
@@ -70,6 +72,7 @@ class BookController extends AbstractController {
         try {
             $this->persistenceService->persist($book);
         } catch (Exception $e) {
+            // TODO replace with generic message, handled by event subscriber
             return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
@@ -94,6 +97,7 @@ class BookController extends AbstractController {
         try {
             $this->persistenceService->persist($book);
         } catch (Exception $e) {
+            // TODO replace with generic message, handled by event subscriber
             return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
@@ -103,6 +107,7 @@ class BookController extends AbstractController {
     /** @Route("/books/{id}", name="books_delete", methods={"DELETE"}, requirements={"id"="\d+"}) */
     public function delete(int $id) {
         try {
+            // TODO create method to get by id
             $book = $this->bookRepository->findOneBy(["id" => $id]);
             if (is_null($book)) {
                 return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
@@ -114,6 +119,7 @@ class BookController extends AbstractController {
             }
             return $this->responseService->getResponse(null);
         } catch (Exception $e) {
+            // TODO replace with generic message, handled by event subscriber
             return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
