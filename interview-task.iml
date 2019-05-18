@@ -6,14 +6,17 @@
       <sourceFolder url="file://$MODULE_DIR$/source/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/source/src" isTestSource="false" packagePrefix="App\" />
       <excludeFolder url="file://$MODULE_DIR$/source/var" />
+      <excludeFolder url="file://$MODULE_DIR$/source/vendor/bin/.phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/collections" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/data-fixtures" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/doctrine-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/doctrine-cache-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/doctrine-fixtures-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/doctrine-migrations-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/doctrine/inflector" />
@@ -32,6 +35,7 @@
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/cache" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/console" />
@@ -39,6 +43,7 @@
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/debug" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/dependency-injection" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/doctrine-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/dom-crawler" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/dotenv" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/filesystem" />
@@ -49,6 +54,7 @@
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/maker-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/orm-pack" />
+      <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/phpunit-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/source/vendor/symfony/serializer" />

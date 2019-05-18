@@ -29,3 +29,7 @@ services:
         class: Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer
         public: false
         tags: [serializer.normalizer]
+
+    App\DataFixtures\:
+        resource: '../src/DataFixtures'
+        tags: ['doctrine.fixture.orm']

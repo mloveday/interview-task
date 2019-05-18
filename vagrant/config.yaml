@@ -3,6 +3,9 @@ databases:
 - name: interview_task
   user: dev
   password: secret
+- name: interview_task_test
+  user: dev
+  password: secret
 folders:
   - map: ../
     to: /vagrant/code
@@ -11,6 +14,7 @@ sites:
   root: /vagrant/code/public_html
 apt-packages:
   - php7.2-xml
+  - php7.2-mbstring
 ports:
   - guest: 3306
     host: 33060
