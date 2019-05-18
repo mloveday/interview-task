@@ -32,27 +32,18 @@ class BookController extends AbstractController {
 
     /** @Route("/books", name="books_get_all", methods={"GET"}) */
     public function getAll() {
-        try {
-            $books = $this->bookRepository->findAll();
-            return $this->responseService->getResponse($books);
-        } catch (Exception $e) {
-            return $this->responseService->getErrorResponse(["Error getting books"], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
+        $books = $this->bookRepository->findAll();
+        return $this->responseService->getResponse($books);
     }
 
     /** @Route("/books/{id}", name="books_get_one", methods={"GET"}, requirements={"id"="\d+"}) */
     public function getOne(int $id) {
-        try {
-            // TODO create method to get by id
-            $book = $this->bookRepository->findOneBy(["id" => $id]);
-            if (is_null($book)) {
-                return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
-            }
-            return $this->responseService->getResponse($book);
-        } catch (Exception $e) {
-            // TODO replace with generic message, handled by event subscriber
-            return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
+        // TODO create method to get by id
+        $book = $this->bookRepository->findOneBy(["id" => $id]);
+        if (is_null($book)) {
+            return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
         }
+        return $this->responseService->getResponse($book);
     }
 
     /** @Route("/books", name="books_post", methods={"POST", "PATCH"}) */
@@ -68,67 +59,47 @@ class BookController extends AbstractController {
         }
         /** @var Book $book */
         $book = $this->requestService->getUpdatedObject($request->getContent(), Book::class, $existingBook);
-
-        try {
-            $this->persistenceService->persist($book);
-        } catch (Exception $e) {
-            // TODO replace with generic message, handled by event subscriber
-            return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
-
+        $this->persistenceService->persist($book);
         return $this->responseService->getResponse($book);
     }
 
     /** @Route("/books", name="books_put", methods={"PUT"}) */
     public function put(Request $request) {
-        $errorMessages = [];
-        $decodedBody = json_decode($request->getContent());
-        if (isset($decodedBody->id)) {
-            $errorMessages[] = 'id must not be supplied when creating a new book';
-        }
-        $errorMessages = array_merge($errorMessages, $this->checkFields($decodedBody, ['author', 'title']));
+        $errorMessages = $this->checkFields($request, ['author', 'title']);
         if (count($errorMessages) > 0) {
             return $this->responseService->getErrorResponse($errorMessages, Response::HTTP_BAD_REQUEST);
         }
 
         /** @var Book $book */
         $book = $this->requestService->getDeserializedRequest($request->getContent(), Book::class);
-
-        try {
-            $this->persistenceService->persist($book);
-        } catch (Exception $e) {
-            // TODO replace with generic message, handled by event subscriber
-            return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
-
+        $this->persistenceService->persist($book);
         return $this->responseService->getResponse($book);
     }
 
     /** @Route("/books/{id}", name="books_delete", methods={"DELETE"}, requirements={"id"="\d+"}) */
     public function delete(int $id) {
-        try {
-            // TODO create method to get by id
-            $book = $this->bookRepository->findOneBy(["id" => $id]);
-            if (is_null($book)) {
-                return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
-            }
-            try {
-                $this->persistenceService->delete($book);
-            } catch (Exception $e) {
-                return $this->responseService->getErrorResponse(["Could not delete book with id $id"], Response::HTTP_INTERNAL_SERVER_ERROR);
-            }
-            return $this->responseService->getResponse(null);
-        } catch (Exception $e) {
-            // TODO replace with generic message, handled by event subscriber
-            return $this->responseService->getErrorResponse([$e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
+        // TODO create method to get by id
+        $book = $this->bookRepository->findOneBy(["id" => $id]);
+        if (is_null($book)) {
+            return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
         }
+        try {
+            $this->persistenceService->delete($book);
+        } catch (Exception $e) {
+            return $this->responseService->getErrorResponse(["Could not delete book with id $id"], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+        return $this->responseService->getResponse(null);
     }
 
-    private function checkFields($object, array $fields) {
+    private function checkFields(Request $request, array $fields) {
         $errors = [];
+        $decodedBody = json_decode($request->getContent());
+        if (isset($decodedBody->id)) {
+            $errors[] = 'id must not be supplied when creating a new book';
+        }
         foreach ($fields as $field) {
-            if (!isset($object->{$field}) || is_null($object->{$field})) {
-                $errorMessages[] = "$field must be supplied and not null";
+            if (!isset($decodedBody->{$field}) || is_null($decodedBody->{$field})) {
+                $errors[] = "$field must be supplied and not null";
             }
         }
         return $errors;
