@@ -13,7 +13,8 @@
         "symfony/maker-bundle": "^1.11",
         "symfony/orm-pack": "^1.0",
         "symfony/serializer": "4.2.*",
-        "symfony/yaml": "4.2.*"
+        "symfony/yaml": "4.2.*",
+        "ext-json": "*"
     },
     "config": {
         "preferred-install": {
