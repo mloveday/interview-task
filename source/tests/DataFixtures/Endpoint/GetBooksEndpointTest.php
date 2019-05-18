@@ -3,7 +3,6 @@
 namespace App\Tests\DataFixtures\Endpoint;
 
 use App\DataFixtures\DataFixtureTest;
-use App\DataFixtures\AppFixtures;
 use App\Entity\Book;
 
 class GetBooksEndpointTest extends DataFixtureTest {
@@ -17,6 +16,5 @@ class GetBooksEndpointTest extends DataFixtureTest {
 
         // then
         $this->assertSameSize($allBooks, $responseObject);
-        $this->assertSameSize(AppFixtures::BOOKS, $responseObject);
     }
 }
