@@ -38,8 +38,7 @@ class BookController extends AbstractController {
 
     /** @Route("/books/{id}", name="books_get_one", methods={"GET"}, requirements={"id"="\d+"}) */
     public function getOne(int $id) {
-        // TODO create method to get by id
-        $book = $this->bookRepository->findOneBy(["id" => $id]);
+        $book = $this->bookRepository->getOneById($id);
         if (is_null($book)) {
             return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
         }
@@ -78,8 +77,7 @@ class BookController extends AbstractController {
 
     /** @Route("/books/{id}", name="books_delete", methods={"DELETE"}, requirements={"id"="\d+"}) */
     public function delete(int $id) {
-        // TODO create method to get by id
-        $book = $this->bookRepository->findOneBy(["id" => $id]);
+        $book = $this->bookRepository->getOneById($id);
         if (is_null($book)) {
             return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
         }

@@ -19,6 +19,10 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
+    public function getOneById(int $id) {
+        return $this->findOneBy(['id' => $id]);
+    }
+
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */
