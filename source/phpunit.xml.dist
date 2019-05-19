@@ -10,6 +10,7 @@
         <server name="KERNEL_CLASS" value="App\Kernel" />
         <env name="APP_ENV" value="test"/>
         <env name="DATABASE_URL" value="mysql://dev:secret@127.0.0.1:3306/interview_task_test"/>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
     <testsuites>
         <testsuite name="AllTests">
