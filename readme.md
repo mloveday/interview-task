@@ -15,12 +15,14 @@ Note that this allows installing dependencies outside of the vagrant box.
 * Navigate to `./vagrant`, run `vagrant up`
 * SSH into the vagrant box (`vagrant ssh`)
 * Navigate to `/vagrant/code/source`
-* Run `composer install`
-* Run `php bin/console doctrine:migrations:migrate`
+* Install dependencies: `composer install`
+* Run DB migrations: `php bin/console doctrine:migrations:migrate`
+* Load fixtures: `php bin/console doctrine:fixtures:load --append`
 
 ## Subsequent running
 * Navigate to `./vagrant`, run `vagrant up`
-* Endpoints available at `http://localhost:8000` (e.g. `http://localhost:8000/books`)
+* Endpoints available at `http://localhost:8000` (e.g. `http://localhost:8000/books?api_key=test_api_key`)
+* dev & test environment api key for local requests located in `App\DataFixtures\AppFixtures` class
 
 ## Tests
 * Run vagrant (`vagrant up`)

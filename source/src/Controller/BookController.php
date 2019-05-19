@@ -8,12 +8,12 @@ use App\Response\ErrorMessageService;
 use App\Service\PersistenceService;
 use App\Service\RequestService;
 use App\Service\ResponseService;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/** @Route("/api") */
 class BookController extends AbstractController {
     /** @var BookRepository */
     private $bookRepository;

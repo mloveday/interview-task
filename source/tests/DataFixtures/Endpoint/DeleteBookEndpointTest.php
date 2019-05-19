@@ -2,6 +2,7 @@
 
 namespace App\Tests\DataFixtures\Endpoint;
 
+use App\DataFixtures\AppFixtures;
 use App\DataFixtures\DataFixtureTest;
 use App\Entity\Book;
 use App\Response\ErrorMessageService;
@@ -56,6 +57,6 @@ class DeleteBookEndpointTest extends DataFixtureTest {
     }
 
     private function makeRequest(int $id) {
-        $this->client->request('DELETE', "/books/$id");
+        $this->client->request('DELETE', "/api/books/$id?api_key=".AppFixtures::API_KEY);
     }
 }

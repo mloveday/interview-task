@@ -26,3 +26,8 @@ App\Tests\DataFixtures\Endpoint\PutBookEndpoint
 App\Tests\DataFixtures\FixturesSanity
  [x] fixturesAreLoaded
 
+App\Tests\DataFixtures\ApiKey
+ [x] apiKeyCorrect
+ [x] apiKeyInvalid
+ [x] apiKeyMissing
+

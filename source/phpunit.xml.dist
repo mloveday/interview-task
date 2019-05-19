@@ -24,7 +24,6 @@
             <directory>src</directory>
             <exclude>
                 <directory>src/Migrations</directory>
-                <directory>src/EventSubscriber</directory>
                 <file>src/Kernel.php</file>
             </exclude>
         </whitelist>

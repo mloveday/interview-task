@@ -2,6 +2,7 @@
 
 namespace App\Tests\DataFixtures\Endpoint;
 
+use App\DataFixtures\AppFixtures;
 use App\DataFixtures\DataFixtureTest;
 use App\Entity\Book;
 use App\Response\ErrorMessageService;
@@ -50,6 +51,6 @@ class GetBookEndpointTest extends DataFixtureTest {
     }
 
     private function urlForBookWithId(int $id) {
-        return "/books/$id";
+        return "/api/books/$id?api_key=".AppFixtures::API_KEY;
     }
 }

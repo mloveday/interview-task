@@ -2,13 +2,14 @@
 
 namespace App\Tests\DataFixtures\Endpoint;
 
+use App\DataFixtures\AppFixtures;
 use App\DataFixtures\DataFixtureTest;
 use App\Entity\Book;
 use App\Response\ErrorMessageService;
 use Symfony\Component\HttpFoundation\Response;
 
 class PutBookEndpointTest extends DataFixtureTest {
-    const URL = '/books';
+    const URL = '/api/books?api_key='.AppFixtures::API_KEY;
 
     public function test_putUpdatesBook() {
         // given

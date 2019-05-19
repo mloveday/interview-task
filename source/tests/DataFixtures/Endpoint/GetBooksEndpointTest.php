@@ -2,6 +2,7 @@
 
 namespace App\Tests\DataFixtures\Endpoint;
 
+use App\DataFixtures\AppFixtures;
 use App\DataFixtures\DataFixtureTest;
 use App\Entity\Book;
 
@@ -12,7 +13,7 @@ class GetBooksEndpointTest extends DataFixtureTest {
         $allBooks = $this->entityManager->getRepository(Book::class)->findAll();
 
         // when
-        $this->client->request('GET', '/books');
+        $this->client->request('GET', '/api/books?api_key='.AppFixtures::API_KEY);
         $responseObject = json_decode($this->client->getResponse()->getContent());
 
         // then

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1558263529">
-  <project timestamp="1558263529">
+<coverage generated="1558272308">
+  <project timestamp="1558272308">
     <package name="App\Controller">
       <file name="/vagrant/code/source/src/Controller/BookController.php">
         <class name="App\Controller\BookController" namespace="App\Controller">
           <metrics complexity="17" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="39" elements="46" coveredelements="46"/>
         </class>
-        <line num="27" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="15"/>
-        <line num="28" type="stmt" count="15"/>
-        <line num="29" type="stmt" count="15"/>
-        <line num="30" type="stmt" count="15"/>
-        <line num="31" type="stmt" count="15"/>
-        <line num="32" type="stmt" count="15"/>
-        <line num="35" type="method" name="getAll" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="36" type="stmt" count="1"/>
-        <line num="37" type="stmt" count="1"/>
+        <line num="27" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="28" type="stmt" count="18"/>
+        <line num="29" type="stmt" count="18"/>
+        <line num="30" type="stmt" count="18"/>
+        <line num="31" type="stmt" count="18"/>
+        <line num="32" type="stmt" count="18"/>
+        <line num="35" type="method" name="getAll" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="36" type="stmt" count="2"/>
+        <line num="37" type="stmt" count="2"/>
         <line num="41" type="method" name="getOne" visibility="public" complexity="2" crap="2" count="2"/>
         <line num="42" type="stmt" count="2"/>
         <line num="43" type="stmt" count="2"/>
@@ -52,53 +52,125 @@
         <line num="96" type="stmt" count="4"/>
         <line num="97" type="stmt" count="2"/>
         <line num="100" type="stmt" count="4"/>
-        <metrics loc="101" ncloc="90" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="39" elements="46" coveredelements="46"/>
+        <metrics loc="101" ncloc="89" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="39" elements="46" coveredelements="46"/>
       </file>
     </package>
     <package name="App\DataFixtures">
       <file name="/vagrant/code/source/src/DataFixtures/AppFixtures.php">
         <class name="App\DataFixtures\AppFixtures" namespace="App\DataFixtures">
-          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
+          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
         </class>
-        <line num="15" type="method" name="load" visibility="public" complexity="2" crap="2" count="16"/>
-        <line num="16" type="stmt" count="16"/>
-        <line num="17" type="stmt" count="16"/>
-        <line num="18" type="stmt" count="16"/>
-        <line num="19" type="stmt" count="16"/>
-        <line num="20" type="stmt" count="16"/>
-        <line num="22" type="stmt" count="16"/>
-        <line num="23" type="stmt" count="16"/>
-        <metrics loc="23" ncloc="23" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
+        <line num="18" type="method" name="load" visibility="public" complexity="2" crap="2" count="19"/>
+        <line num="19" type="stmt" count="19"/>
+        <line num="20" type="stmt" count="19"/>
+        <line num="21" type="stmt" count="19"/>
+        <line num="22" type="stmt" count="19"/>
+        <line num="23" type="stmt" count="19"/>
+        <line num="26" type="stmt" count="19"/>
+        <line num="27" type="stmt" count="19"/>
+        <line num="28" type="stmt" count="19"/>
+        <line num="30" type="stmt" count="19"/>
+        <line num="31" type="stmt" count="19"/>
+        <metrics loc="31" ncloc="31" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
       </file>
     </package>
     <package name="App\Entity">
+      <file name="/vagrant/code/source/src/Entity/ApiKey.php">
+        <class name="App\Entity\ApiKey" namespace="App\Entity">
+          <metrics complexity="4" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="7" coveredelements="5"/>
+        </class>
+        <line num="24" type="method" name="getId" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="29" type="method" name="getApiKey" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="34" type="method" name="setApiKey" visibility="public" complexity="1" crap="1" count="19"/>
+        <line num="36" type="stmt" count="19"/>
+        <line num="38" type="stmt" count="19"/>
+        <metrics loc="40" ncloc="29" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="7" coveredelements="5"/>
+      </file>
       <file name="/vagrant/code/source/src/Entity/Book.php">
         <class name="App\Entity\Book" namespace="App\Entity">
           <metrics complexity="8" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
         </class>
-        <line num="29" type="method" name="getId" visibility="public" complexity="2" crap="2" count="11"/>
-        <line num="31" type="stmt" count="11"/>
-        <line num="34" type="method" name="getTitle" visibility="public" complexity="2" crap="2" count="5"/>
-        <line num="36" type="stmt" count="5"/>
-        <line num="39" type="method" name="setTitle" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="41" type="stmt" count="16"/>
-        <line num="43" type="stmt" count="16"/>
-        <line num="46" type="method" name="getAuthor" visibility="public" complexity="2" crap="2" count="5"/>
-        <line num="48" type="stmt" count="5"/>
-        <line num="51" type="method" name="setAuthor" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="53" type="stmt" count="16"/>
-        <line num="55" type="stmt" count="16"/>
+        <line num="29" type="method" name="getId" visibility="public" complexity="2" crap="2" count="12"/>
+        <line num="31" type="stmt" count="12"/>
+        <line num="34" type="method" name="getTitle" visibility="public" complexity="2" crap="2" count="6"/>
+        <line num="36" type="stmt" count="6"/>
+        <line num="39" type="method" name="setTitle" visibility="public" complexity="1" crap="1" count="19"/>
+        <line num="41" type="stmt" count="19"/>
+        <line num="43" type="stmt" count="19"/>
+        <line num="46" type="method" name="getAuthor" visibility="public" complexity="2" crap="2" count="6"/>
+        <line num="48" type="stmt" count="6"/>
+        <line num="51" type="method" name="setAuthor" visibility="public" complexity="1" crap="1" count="19"/>
+        <line num="53" type="stmt" count="19"/>
+        <line num="55" type="stmt" count="19"/>
         <metrics loc="57" ncloc="43" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
       </file>
     </package>
+    <package name="App\EventSubscriber">
+      <file name="/vagrant/code/source/src/EventSubscriber/ApiKeySubscriber.php">
+        <class name="App\EventSubscriber\ApiKeySubscriber" namespace="App\EventSubscriber">
+          <metrics complexity="6" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="10" elements="15" coveredelements="11"/>
+        </class>
+        <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="17" type="stmt" count="18"/>
+        <line num="18" type="stmt" count="18"/>
+        <line num="20" type="method" name="onKernelController" visibility="public" complexity="4" crap="4.02" count="18"/>
+        <line num="21" type="stmt" count="18"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="18"/>
+        <line num="25" type="stmt" count="18"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="17"/>
+        <line num="29" type="stmt" count="17"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="16"/>
+        <line num="34" type="method" name="getSubscribedEvents" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <metrics loc="38" ncloc="37" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="10" elements="15" coveredelements="11"/>
+      </file>
+      <file name="/vagrant/code/source/src/EventSubscriber/ExceptionSubscriber.php">
+        <class name="App\EventSubscriber\ExceptionSubscriber" namespace="App\EventSubscriber">
+          <metrics complexity="6" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="8" elements="16" coveredelements="9"/>
+        </class>
+        <line num="18" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="19" type="stmt" count="2"/>
+        <line num="20" type="stmt" count="2"/>
+        <line num="22" type="method" name="onKernelException" visibility="public" complexity="4" crap="5.02" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="27" type="stmt" count="2"/>
+        <line num="28" type="stmt" count="2"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="2"/>
+        <line num="35" type="stmt" count="2"/>
+        <line num="37" type="method" name="getSubscribedEvents" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <metrics loc="42" ncloc="41" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="8" elements="16" coveredelements="9"/>
+      </file>
+    </package>
     <package name="App\Repository">
+      <file name="/vagrant/code/source/src/Repository/ApiKeyRepository.php">
+        <class name="App\Repository\ApiKeyRepository" namespace="App\Repository">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        </class>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="19"/>
+        <line num="23" type="stmt" count="19"/>
+        <line num="24" type="stmt" count="19"/>
+        <line num="26" type="method" name="getOneByApiKey" visibility="public" complexity="1" crap="1" count="17"/>
+        <line num="27" type="stmt" count="17"/>
+        <metrics loc="58" ncloc="22" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
       <file name="/vagrant/code/source/src/Repository/BookRepository.php">
         <class name="App\Repository\BookRepository" namespace="App\Repository">
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
         </class>
-        <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="21" type="stmt" count="16"/>
-        <line num="22" type="stmt" count="16"/>
+        <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="19"/>
+        <line num="21" type="stmt" count="19"/>
+        <line num="22" type="stmt" count="19"/>
         <line num="24" type="method" name="getOneById" visibility="public" complexity="1" crap="1" count="4"/>
         <line num="25" type="stmt" count="4"/>
         <metrics loc="56" ncloc="20" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
@@ -109,14 +181,14 @@
         <class name="App\Response\ApiResponse" namespace="App\Response">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
-        <line num="10" type="stmt" count="6"/>
-        <line num="11" type="stmt" count="6"/>
+        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="10" type="stmt" count="7"/>
+        <line num="11" type="stmt" count="7"/>
         <metrics loc="11" ncloc="11" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
       <file name="/vagrant/code/source/src/Response/ErrorMessageService.php">
         <class name="App\Response\ErrorMessageService" namespace="App\Response">
-          <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="8" coveredelements="8"/>
+          <metrics complexity="6" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="12" coveredelements="12"/>
         </class>
         <line num="6" type="method" name="bookNotFound" visibility="public" complexity="1" crap="1" count="4"/>
         <line num="7" type="stmt" count="4"/>
@@ -126,15 +198,19 @@
         <line num="15" type="stmt" count="1"/>
         <line num="18" type="method" name="fieldMustBePresent" visibility="public" complexity="1" crap="1" count="2"/>
         <line num="19" type="stmt" count="2"/>
-        <metrics loc="20" ncloc="20" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="8" coveredelements="8"/>
+        <line num="22" type="method" name="apiKeyRequired" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="26" type="method" name="apiKeyInvalid" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="27" type="stmt" count="1"/>
+        <metrics loc="28" ncloc="28" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="12" coveredelements="12"/>
       </file>
       <file name="/vagrant/code/source/src/Response/ErrorResponse.php">
         <class name="App\Response\ErrorResponse" namespace="App\Response">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="9"/>
-        <line num="10" type="stmt" count="9"/>
-        <line num="11" type="stmt" count="9"/>
+        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
+        <line num="10" type="stmt" count="11"/>
+        <line num="11" type="stmt" count="11"/>
         <metrics loc="11" ncloc="10" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
     </package>
@@ -143,9 +219,9 @@
         <class name="App\Service\PersistenceService" namespace="App\Service">
           <metrics complexity="5" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="10" elements="19" coveredelements="13"/>
         </class>
-        <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="15"/>
-        <line num="13" type="stmt" count="15"/>
-        <line num="14" type="stmt" count="15"/>
+        <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="13" type="stmt" count="18"/>
+        <line num="14" type="stmt" count="18"/>
         <line num="16" type="method" name="persistAll" visibility="public" complexity="2" crap="6" count="0"/>
         <line num="18" type="stmt" count="0"/>
         <line num="19" type="stmt" count="0"/>
@@ -168,9 +244,9 @@
         <class name="App\Service\RequestService" namespace="App\Service">
           <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
         </class>
-        <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="15"/>
-        <line num="15" type="stmt" count="15"/>
-        <line num="16" type="stmt" count="15"/>
+        <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="15" type="stmt" count="18"/>
+        <line num="16" type="stmt" count="18"/>
         <line num="18" type="method" name="getDeserializedRequest" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="19" type="stmt" count="1"/>
         <line num="22" type="method" name="getUpdatedObject" visibility="public" complexity="1" crap="1" count="2"/>
@@ -181,17 +257,17 @@
         <class name="App\Service\ResponseService" namespace="App\Service">
           <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
         </class>
-        <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="15"/>
-        <line num="15" type="stmt" count="15"/>
-        <line num="16" type="stmt" count="15"/>
-        <line num="18" type="method" name="getResponse" visibility="public" complexity="1" crap="1" count="6"/>
-        <line num="19" type="stmt" count="6"/>
-        <line num="20" type="stmt" count="6"/>
-        <line num="23" type="method" name="getErrorResponse" visibility="public" complexity="1" crap="1" count="9"/>
-        <line num="24" type="stmt" count="9"/>
+        <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="15" type="stmt" count="18"/>
+        <line num="16" type="stmt" count="18"/>
+        <line num="18" type="method" name="getResponse" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="19" type="stmt" count="7"/>
+        <line num="20" type="stmt" count="7"/>
+        <line num="23" type="method" name="getErrorResponse" visibility="public" complexity="1" crap="1" count="11"/>
+        <line num="24" type="stmt" count="11"/>
         <metrics loc="25" ncloc="24" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
       </file>
     </package>
-    <metrics files="10" loc="365" ncloc="301" classes="10" methods="31" coveredmethods="30" conditionals="0" coveredconditionals="0" statements="88" coveredstatements="83" elements="119" coveredelements="113"/>
+    <metrics files="14" loc="559" ncloc="445" classes="14" methods="44" coveredmethods="38" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="112" elements="169" coveredelements="150"/>
   </project>
 </coverage>
