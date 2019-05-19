@@ -50,7 +50,7 @@ class BookController extends AbstractController {
     public function post(Request $request) {
         $decodedBody = json_decode($request->getContent());
         if (!isset($decodedBody->id) || is_null($decodedBody->id)) {
-            return $this->responseService->getErrorResponse(['id must be supplied and not null'], Response::HTTP_BAD_REQUEST);
+            return $this->responseService->getErrorResponse([ErrorMessageService::idMustNotBeNull()], Response::HTTP_BAD_REQUEST);
         }
 
         $existingBook = $this->bookRepository->findOneBy(['id' => $decodedBody->id]);

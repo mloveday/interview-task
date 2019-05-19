@@ -11,9 +11,13 @@ class FixturesSanityTest extends DataFixtureTest {
         // given
 
         // when
+        /** @var Book[] $allBooks */
         $allBooks = $this->entityManager->getRepository(Book::class)->findAll();
 
         // then
         $this->assertSameSize(AppFixtures::BOOKS, $allBooks);
+        foreach($allBooks as $book) {
+            $this->assertNotNull($book->getId());
+        }
     }
 }
