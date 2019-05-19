@@ -82,11 +82,7 @@ class BookController extends AbstractController {
         if (is_null($book)) {
             return $this->responseService->getErrorResponse([ErrorMessageService::bookNotFound($id)], Response::HTTP_NOT_FOUND);
         }
-        try {
-            $this->persistenceService->delete($book);
-        } catch (Exception $e) {
-            return $this->responseService->getErrorResponse(["Could not delete book with id $id"], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
+        $this->persistenceService->delete($book);
         return $this->responseService->getResponse(null);
     }
 
