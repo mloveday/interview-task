@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Repository\BookRepository;
+use App\Response\ErrorMessageService;
 use App\Service\PersistenceService;
 use App\Service\RequestService;
 use App\Service\ResponseService;
@@ -40,7 +41,7 @@ class BookController extends AbstractController {
     public function getOne(int $id) {
         $book = $this->bookRepository->getOneById($id);
         if (is_null($book)) {
-            return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
+            return $this->responseService->getErrorResponse([ErrorMessageService::bookNotFound($id)], Response::HTTP_NOT_FOUND);
         }
         return $this->responseService->getResponse($book);
     }
@@ -54,7 +55,7 @@ class BookController extends AbstractController {
 
         $existingBook = $this->bookRepository->findOneBy(['id' => $decodedBody->id]);
         if (is_null($existingBook)) {
-            return $this->responseService->getErrorResponse(["Book not found with id $decodedBody->id"], Response::HTTP_NOT_FOUND);
+            return $this->responseService->getErrorResponse([ErrorMessageService::bookNotFound($decodedBody->id)], Response::HTTP_NOT_FOUND);
         }
         /** @var Book $book */
         $book = $this->requestService->getUpdatedObject($request->getContent(), Book::class, $existingBook);
@@ -79,7 +80,7 @@ class BookController extends AbstractController {
     public function delete(int $id) {
         $book = $this->bookRepository->getOneById($id);
         if (is_null($book)) {
-            return $this->responseService->getErrorResponse(["Book not found with id $id"], Response::HTTP_NOT_FOUND);
+            return $this->responseService->getErrorResponse([ErrorMessageService::bookNotFound($id)], Response::HTTP_NOT_FOUND);
         }
         try {
             $this->persistenceService->delete($book);
