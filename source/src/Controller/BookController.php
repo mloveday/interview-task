@@ -94,11 +94,11 @@ class BookController extends AbstractController {
         $errors = [];
         $decodedBody = json_decode($request->getContent());
         if (isset($decodedBody->id)) {
-            $errors[] = 'id must not be supplied when creating a new book';
+            $errors[] = ErrorMessageService::idMustNotBePresent();
         }
         foreach ($fields as $field) {
             if (!isset($decodedBody->{$field}) || is_null($decodedBody->{$field})) {
-                $errors[] = "$field must be supplied and not null";
+                $errors[] = ErrorMessageService::fieldMustBePresent($field);
             }
         }
         return $errors;
