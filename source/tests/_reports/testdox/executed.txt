@@ -1,0 +1,28 @@
+App\Tests\DataFixtures\Endpoint\DeleteBookEndpoint
+ [x] deleteDeletesBook
+ [x] returnsErrorWhenNoBookFound
+
+App\Tests\DataFixtures\Endpoint\GetBookEndpoint
+ [x] getsBookWithId
+ [x] returnsErrorWhenNoBookFound
+
+App\Tests\DataFixtures\Endpoint\GetBooksEndpoint
+ [x] getsListOfAllBooks
+
+App\Tests\DataFixtures\Endpoint\PostPatchBookEndpoint
+ [x] postUpdatesBook
+ [x] patchUpdatesBook
+ [x] postReturnsErrorWhenNoBookFound
+ [x] patchReturnsErrorWhenNoBookFound
+ [x] postReturnsErrorWhenNoIdInRequest
+ [x] patchReturnsErrorWhenNoIdInRequest
+
+App\Tests\DataFixtures\Endpoint\PutBookEndpoint
+ [x] putUpdatesBook
+ [x] putReturnsErrorWhenTitleNotInRequest
+ [x] putReturnsErrorWhenAuthorNotInRequest
+ [x] putReturnsErrorWhenIdInRequest
+
+App\Tests\DataFixtures\FixturesSanity
+ [x] fixturesAreLoaded
+

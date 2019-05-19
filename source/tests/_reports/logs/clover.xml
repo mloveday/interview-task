@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1558263529">
+  <project timestamp="1558263529">
+    <package name="App\Controller">
+      <file name="/vagrant/code/source/src/Controller/BookController.php">
+        <class name="App\Controller\BookController" namespace="App\Controller">
+          <metrics complexity="17" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="39" elements="46" coveredelements="46"/>
+        </class>
+        <line num="27" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="15"/>
+        <line num="28" type="stmt" count="15"/>
+        <line num="29" type="stmt" count="15"/>
+        <line num="30" type="stmt" count="15"/>
+        <line num="31" type="stmt" count="15"/>
+        <line num="32" type="stmt" count="15"/>
+        <line num="35" type="method" name="getAll" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="41" type="method" name="getOne" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="42" type="stmt" count="2"/>
+        <line num="43" type="stmt" count="2"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="50" type="method" name="post" visibility="public" complexity="4" crap="4" count="6"/>
+        <line num="51" type="stmt" count="6"/>
+        <line num="52" type="stmt" count="6"/>
+        <line num="53" type="stmt" count="2"/>
+        <line num="56" type="stmt" count="4"/>
+        <line num="57" type="stmt" count="4"/>
+        <line num="58" type="stmt" count="2"/>
+        <line num="61" type="stmt" count="2"/>
+        <line num="62" type="stmt" count="2"/>
+        <line num="63" type="stmt" count="2"/>
+        <line num="67" type="method" name="put" visibility="public" complexity="2" crap="2" count="4"/>
+        <line num="68" type="stmt" count="4"/>
+        <line num="69" type="stmt" count="4"/>
+        <line num="70" type="stmt" count="3"/>
+        <line num="74" type="stmt" count="1"/>
+        <line num="75" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="80" type="method" name="delete" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="81" type="stmt" count="2"/>
+        <line num="82" type="stmt" count="2"/>
+        <line num="83" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="86" type="stmt" count="1"/>
+        <line num="89" type="method" name="checkFields" visibility="private" complexity="5" crap="5" count="4"/>
+        <line num="90" type="stmt" count="4"/>
+        <line num="91" type="stmt" count="4"/>
+        <line num="92" type="stmt" count="4"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="95" type="stmt" count="4"/>
+        <line num="96" type="stmt" count="4"/>
+        <line num="97" type="stmt" count="2"/>
+        <line num="100" type="stmt" count="4"/>
+        <metrics loc="101" ncloc="90" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="39" elements="46" coveredelements="46"/>
+      </file>
+    </package>
+    <package name="App\DataFixtures">
+      <file name="/vagrant/code/source/src/DataFixtures/AppFixtures.php">
+        <class name="App\DataFixtures\AppFixtures" namespace="App\DataFixtures">
+          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
+        </class>
+        <line num="15" type="method" name="load" visibility="public" complexity="2" crap="2" count="16"/>
+        <line num="16" type="stmt" count="16"/>
+        <line num="17" type="stmt" count="16"/>
+        <line num="18" type="stmt" count="16"/>
+        <line num="19" type="stmt" count="16"/>
+        <line num="20" type="stmt" count="16"/>
+        <line num="22" type="stmt" count="16"/>
+        <line num="23" type="stmt" count="16"/>
+        <metrics loc="23" ncloc="23" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
+      </file>
+    </package>
+    <package name="App\Entity">
+      <file name="/vagrant/code/source/src/Entity/Book.php">
+        <class name="App\Entity\Book" namespace="App\Entity">
+          <metrics complexity="8" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
+        </class>
+        <line num="29" type="method" name="getId" visibility="public" complexity="2" crap="2" count="11"/>
+        <line num="31" type="stmt" count="11"/>
+        <line num="34" type="method" name="getTitle" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="36" type="stmt" count="5"/>
+        <line num="39" type="method" name="setTitle" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="41" type="stmt" count="16"/>
+        <line num="43" type="stmt" count="16"/>
+        <line num="46" type="method" name="getAuthor" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="48" type="stmt" count="5"/>
+        <line num="51" type="method" name="setAuthor" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="53" type="stmt" count="16"/>
+        <line num="55" type="stmt" count="16"/>
+        <metrics loc="57" ncloc="43" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
+      </file>
+    </package>
+    <package name="App\Repository">
+      <file name="/vagrant/code/source/src/Repository/BookRepository.php">
+        <class name="App\Repository\BookRepository" namespace="App\Repository">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        </class>
+        <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="21" type="stmt" count="16"/>
+        <line num="22" type="stmt" count="16"/>
+        <line num="24" type="method" name="getOneById" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="25" type="stmt" count="4"/>
+        <metrics loc="56" ncloc="20" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+    </package>
+    <package name="App\Response">
+      <file name="/vagrant/code/source/src/Response/ApiResponse.php">
+        <class name="App\Response\ApiResponse" namespace="App\Response">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        </class>
+        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="10" type="stmt" count="6"/>
+        <line num="11" type="stmt" count="6"/>
+        <metrics loc="11" ncloc="11" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </file>
+      <file name="/vagrant/code/source/src/Response/ErrorMessageService.php">
+        <class name="App\Response\ErrorMessageService" namespace="App\Response">
+          <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="8" coveredelements="8"/>
+        </class>
+        <line num="6" type="method" name="bookNotFound" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="7" type="stmt" count="4"/>
+        <line num="10" type="method" name="idMustNotBeNull" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="11" type="stmt" count="2"/>
+        <line num="14" type="method" name="idMustNotBePresent" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="15" type="stmt" count="1"/>
+        <line num="18" type="method" name="fieldMustBePresent" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="19" type="stmt" count="2"/>
+        <metrics loc="20" ncloc="20" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="8" coveredelements="8"/>
+      </file>
+      <file name="/vagrant/code/source/src/Response/ErrorResponse.php">
+        <class name="App\Response\ErrorResponse" namespace="App\Response">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        </class>
+        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="9"/>
+        <line num="10" type="stmt" count="9"/>
+        <line num="11" type="stmt" count="9"/>
+        <metrics loc="11" ncloc="10" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </file>
+    </package>
+    <package name="App\Service">
+      <file name="/vagrant/code/source/src/Service/PersistenceService.php">
+        <class name="App\Service\PersistenceService" namespace="App\Service">
+          <metrics complexity="5" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="10" elements="19" coveredelements="13"/>
+        </class>
+        <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="15"/>
+        <line num="13" type="stmt" count="15"/>
+        <line num="14" type="stmt" count="15"/>
+        <line num="16" type="method" name="persistAll" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="25" type="method" name="persist" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="27" type="stmt" count="3"/>
+        <line num="28" type="stmt" count="3"/>
+        <line num="29" type="stmt" count="3"/>
+        <line num="30" type="stmt" count="3"/>
+        <line num="32" type="method" name="delete" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <metrics loc="37" ncloc="37" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="10" elements="19" coveredelements="13"/>
+      </file>
+      <file name="/vagrant/code/source/src/Service/RequestService.php">
+        <class name="App\Service\RequestService" namespace="App\Service">
+          <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+        </class>
+        <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="15"/>
+        <line num="15" type="stmt" count="15"/>
+        <line num="16" type="stmt" count="15"/>
+        <line num="18" type="method" name="getDeserializedRequest" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="19" type="stmt" count="1"/>
+        <line num="22" type="method" name="getUpdatedObject" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <metrics loc="24" ncloc="23" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+      </file>
+      <file name="/vagrant/code/source/src/Service/ResponseService.php">
+        <class name="App\Service\ResponseService" namespace="App\Service">
+          <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
+        </class>
+        <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="15"/>
+        <line num="15" type="stmt" count="15"/>
+        <line num="16" type="stmt" count="15"/>
+        <line num="18" type="method" name="getResponse" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="19" type="stmt" count="6"/>
+        <line num="20" type="stmt" count="6"/>
+        <line num="23" type="method" name="getErrorResponse" visibility="public" complexity="1" crap="1" count="9"/>
+        <line num="24" type="stmt" count="9"/>
+        <metrics loc="25" ncloc="24" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
+      </file>
+    </package>
+    <metrics files="10" loc="365" ncloc="301" classes="10" methods="31" coveredmethods="30" conditionals="0" coveredconditionals="0" statements="88" coveredstatements="83" elements="119" coveredelements="113"/>
+  </project>
+</coverage>

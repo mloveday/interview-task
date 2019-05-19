@@ -12,6 +12,7 @@
         <env name="DATABASE_URL" value="mysql://dev:secret@127.0.0.1:3306/interview_task_test"/>
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
+
     <testsuites>
         <testsuite name="AllTests">
             <directory>./tests</directory>
@@ -21,10 +22,21 @@
     <filter>
         <whitelist>
             <directory>src</directory>
+            <exclude>
+                <directory>src/Migrations</directory>
+                <directory>src/EventSubscriber</directory>
+                <file>src/Kernel.php</file>
+            </exclude>
         </whitelist>
     </filter>
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
     </listeners>
+
+    <logging>
+        <log type="coverage-clover" target="tests/_reports/logs/clover.xml"/>
+        <log type="coverage-html" target="tests/_reports/coverage" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highLowerBound="70" />
+        <log type="testdox-text" target="tests/_reports/testdox/executed.txt"/>
+    </logging>
 </phpunit>
